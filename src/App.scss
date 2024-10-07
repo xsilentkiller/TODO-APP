@@ -1,0 +1,82 @@
+$primary-color: #007bff;
+$completed-color: #28a745;
+
+.app {
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    color: $primary-color;
+  }
+
+  .input-container {
+    margin-bottom: 1rem;
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 300px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 10px;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .todo-list {
+    margin-top: 2rem;
+  }
+
+  .todo-item {
+    display: flex;
+    justify-content: space-between; /* Space between task text/input and buttons */
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+
+    &.completed {
+      text-decoration: line-through;
+      color: $completed-color;
+    }
+
+    /* Align buttons to the full right */
+    .button-group {
+      display: flex;
+      margin-left: auto; /* This pushes buttons to the extreme right */
+      
+      button {
+        margin-left: 10px; /* Space between Edit and Delete buttons */
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: darken(red, 10%);
+        }
+      }
+    }
+
+    span, input {
+      flex-grow: 1; /* Make the text/input take the available space */
+      text-align: left;
+    }
+  }
+}
