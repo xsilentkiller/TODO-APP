@@ -1,82 +1,145 @@
+// Global styles
 $primary-color: #007bff;
-$completed-color: #28a745;
+$secondary-color: #28a745;
+$danger-color: #dc3545;
+$bg-color: #f9f9f9;
+$border-radius: 6px;
+$font-size: 16px;
 
-.app {
+body {
+  background-color: $bg-color;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-app-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-title {
+  font-size: 2rem;
   text-align: center;
-  padding: 2rem;
+  margin-bottom: 20px;
+  color: $primary-color;
+}
 
-  h1 {
-    color: $primary-color;
-  }
+// Task input section
+.task-input-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 
-  .input-container {
-    margin-bottom: 1rem;
-
-    input {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      width: 300px;
-    }
-
-    button {
-      padding: 0.5rem 1rem;
-      margin-left: 10px;
-      background-color: $primary-color;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: darken($primary-color, 10%);
-      }
-    }
-  }
-
-  .todo-list {
-    margin-top: 2rem;
-  }
-
-  .todo-item {
-    display: flex;
-    justify-content: space-between; /* Space between task text/input and buttons */
-    align-items: center;
-    background-color: #f9f9f9;
+  .task-input {
+    flex: 1;
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
+    border-radius: $border-radius;
+    font-size: $font-size;
+  }
 
-    &.completed {
-      text-decoration: line-through;
-      color: $completed-color;
+  .task-add-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
     }
+  }
+}
 
-    /* Align buttons to the full right */
-    .button-group {
+// Task list and items
+.task-list {
+  list-style-type: none;
+  padding: 0;
+
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: $border-radius;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+
+    .task-display-section {
+      flex: 1;
       display: flex;
-      margin-left: auto; /* This pushes buttons to the extreme right */
-      
-      button {
-        margin-left: 10px; /* Space between Edit and Delete buttons */
-        background-color: red;
-        color: white;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 4px;
+      justify-content: space-between;
+      align-items: center;
 
-        &:hover {
-          background-color: darken(red, 10%);
+      .task-text {
+        font-size: $font-size;
+        margin-right: 20px;
+      }
+
+      .task-actions {
+        display: flex;
+
+        .task-edit-btn {
+          padding: 5px 10px;
+          margin-right: 10px;
+          background-color: $secondary-color;
+          color: white;
+          border: none;
+          border-radius: $border-radius;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken($secondary-color, 10%);
+          }
+        }
+
+        .task-delete-btn {
+          padding: 5px 10px;
+          background-color: $danger-color;
+          color: white;
+          border: none;
+          border-radius: $border-radius;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken($danger-color, 10%);
+          }
         }
       }
     }
 
-    span, input {
-      flex-grow: 1; /* Make the text/input take the available space */
-      text-align: left;
+    .task-edit-section {
+      display: flex;
+      align-items: center;
+
+      .task-edit-input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: $border-radius;
+        font-size: $font-size;
+        margin-right: 10px;
+      }
+
+      .task-save-btn {
+        padding: 10px 20px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
     }
   }
 }
