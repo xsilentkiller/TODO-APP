@@ -58,6 +58,8 @@ body {
   }
 }
 
+
+
 // Task list and items
 .task-list {
   list-style-type: none;
@@ -142,4 +144,26 @@ body {
       }
     }
   }
+  .task-item.completed .task-text {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .task-toggle-btn {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+ 
+  .task-toggle-btn:hover {
+    background-color: #45a049;
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+  
 }
